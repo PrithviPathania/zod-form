@@ -87,7 +87,7 @@ const Index = () => {
         style={styles.button}
         onPress={handleSubmit(onSubmit)}
       >
-        <Text style={styles.buttonText}>Save</Text>
+        <Text style={styles.buttonText}>Sign In</Text>
       </Pressable>
       <Link style={styles.link} href="/signup" >
         Dont Have an Account? Sign Up

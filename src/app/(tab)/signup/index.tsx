@@ -120,7 +120,7 @@ const Index = () => {
         style={styles.button}
         onPress={handleSubmit(onSubmit)}
       >
-        <Text style={styles.buttonText}>Save</Text>
+        <Text style={styles.buttonText}>Sign Up</Text>
       </Pressable>
    
     </ScrollView>
