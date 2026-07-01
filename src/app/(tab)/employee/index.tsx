@@ -23,7 +23,9 @@ phone: z.string().refine((val) => val.replace(/\D/g, "").length >= 10, { message
 type EmployeeForm = z.infer<typeof employeeSchema>;
 
 const onSubmit = (data: EmployeeForm) => {
-    Alert.alert("Employee Information Saved", `First Name: ${data.firstName}\nLast Name: ${data.lastName}\nEmail: ${data.email}\nEmployee ID: ${data.employeeId}\nPhone: ${data.phone}`);
+    Alert.alert("Employee Information Saved", "Your employee information has been saved.", [
+      { text: "OK", onPress: ()=> router.back() }
+    ]);
     router.back();
   };
 

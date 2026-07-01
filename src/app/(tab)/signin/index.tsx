@@ -22,7 +22,9 @@ password: z.string().min(8, { message: "Password must be at least 8 characters" 
 type SignInForm = z.infer<typeof signInSchema>;
 
 const onSubmit = (data: SignInForm) => {
-    Alert.alert("Sign In Information Saved", `Email: ${data.email}\nPassword: ${data.password}`);
+    Alert.alert("Sign In Information Saved", "Your sign-in information has been saved.", [
+      { text: "OK", onPress: ()=> router.back() }
+    ]);
     router.back();
   };
 

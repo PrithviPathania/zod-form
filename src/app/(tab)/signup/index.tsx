@@ -13,7 +13,9 @@ confirmPassword: z.string(),}).refine((data) => data.password === data.confirmPa
 type SignUpForm = z.infer<typeof signUpSchema>;
 
 const onSubmit = (data: SignUpForm) => {
-    Alert.alert("Sign Up Information Saved", `Email: ${data.email}\nPassword: ${data.password}`);
+    Alert.alert("Sign Up Information Saved", "Your sign-up information has been saved.", [
+      { text: "OK", onPress: ()=> router.back() }
+    ]);
     router.back();
   };
 
