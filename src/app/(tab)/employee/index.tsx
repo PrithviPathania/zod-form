@@ -10,7 +10,7 @@ const employeeSchema = z.object({
 firstName: z.string().trim().min(2, { message: "First name must be at least 2 characters" }),
 lastName: z.string().trim().min(2, { message: "Last name must be at least 2 characters" }),
 email: email({ message: "Invalid email address" }).trim(),
-employeeId: z.string().trim().length(9, { message: "Em ID must be exactly 9 characters" }),
+employeeId: z.string().trim().length(9, { message: "Employee ID must be exactly 9 characters" }),
 phone: z.string().refine((val) => val.replace(/\D/g, "").length >= 10, { message: "Phone number must be exactly 10 digits" }),
 
 

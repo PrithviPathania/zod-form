@@ -22,7 +22,7 @@ export default function TabLayout() {
         name="signin"
         options={{
           title: "Sign-In Form",
-          tabBarIcon: ({ color, size, focused }) => (
+          tabBarIcon: ({ color, size, focused, }) => (
             <Ionicons
               name={focused ? "log-in" : "log-in-outline"}
               size={size}
