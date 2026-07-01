@@ -44,13 +44,15 @@ const Index = () => {
 
   return (
     <ScrollView contentContainerStyle={styles.container}>
-
+      <Text style={styles.label}>First Name</Text>
       <Controller
         name="firstName"
         control={control}
         render={({ field: { onChange, value } }) => (
           <TextInput
-            placeholder="First Name"
+            placeholder="e.g. John"
+            placeholderTextColor={'gray'}
+
             value={value}
             onChangeText={onChange}
             style={styles.input}
@@ -61,13 +63,14 @@ const Index = () => {
       {errors.firstName && (
         <Text style={styles.error}>{errors.firstName.message}</Text>
       )}
-
+      <Text style={styles.label}>Last Name</Text>
       <Controller
         name="lastName"
         control={control}
         render={({ field: { onChange, value } }) => (
           <TextInput
-            placeholder="Last Name"
+            placeholder="eg. Doe"
+            placeholderTextColor={'gray'}
             value={value}
             onChangeText={onChange}
             style={styles.input}
@@ -78,13 +81,14 @@ const Index = () => {
       {errors.lastName && (
         <Text style={styles.error}>{errors.lastName.message}</Text>
       )}
-
+      <Text style={styles.label}>Email</Text>
       <Controller
         name="email"
         control={control}
         render={({ field: { onChange, value } }) => (
           <TextInput
-            placeholder="Email"
+            placeholder="e.g. john.doe@example.com"
+            placeholderTextColor={'gray'}
             value={value}
             onChangeText={onChange}
             keyboardType="email-address"
@@ -96,13 +100,14 @@ const Index = () => {
       {errors.email && (
         <Text style={styles.error}>{errors.email.message}</Text>
       )}
-
+      <Text style={styles.label}>Employee ID</Text>
       <Controller
         name="employeeId"
         control={control}
         render={({ field: { onChange, value } }) => (
           <TextInput
-            placeholder="Employee ID"
+            placeholder="e.g. 123456789"
+            placeholderTextColor={'gray'}
             value={value}
             onChangeText={onChange}
             autoCapitalize="none"
@@ -114,13 +119,14 @@ const Index = () => {
       {errors.employeeId && (
         <Text style={styles.error}>{errors.employeeId.message}</Text>
       )}
-
+        <Text style={styles.label}>Phone Number</Text>
       <Controller
         name="phone"
         control={control}
         render={({ field: { onChange, value } }) => (
           <TextInput
-            placeholder="Phone Number"
+            placeholder="e.g. 1234567890"
+            placeholderTextColor={'gray'}
             value={value}
             onChangeText={onChange}
             keyboardType="phone-pad"
@@ -152,6 +158,7 @@ const styles = StyleSheet.create({
   input: {
     borderWidth: 1,
     borderColor: "#6b7280",
+    backgroundColor: "#f9fafb",
     borderRadius: 8,
     padding: 12,
     marginTop: 10,
@@ -171,4 +178,10 @@ const styles = StyleSheet.create({
     color: "white",
     fontWeight: "bold",
   },
+   label: {
+    fontSize: 14,
+    fontWeight: "600",
+    marginBottom: 6,
+    marginTop: 16,
+  }
 });

@@ -33,13 +33,15 @@ const Index = () => {
 
   return (
     <ScrollView contentContainerStyle={styles.container}>
-
+      <Text style={styles.label}>Full Name</Text>
       <Controller
         name="fullName"
         control={control}
         render={({ field: { onChange, value } }) => (
           <TextInput
-            placeholder="Full Name"
+            placeholder="e.g. John Doe"
+            placeholderTextColor={'gray'}
+
             value={value}
             onChangeText={onChange}
             style={styles.input}
@@ -50,12 +52,15 @@ const Index = () => {
       {errors.fullName && (
         <Text style={styles.error}>{errors.fullName.message}</Text>
       )}
+      <Text style={styles.label}>Email</Text>
       <Controller
         name="email"
         control={control}
         render={({ field: { onChange, value } }) => (
           <TextInput
-            placeholder="Email"
+            placeholder="e.g. john.doe@example.com"
+            placeholderTextColor={'gray'}
+
             value={value}
             onChangeText={onChange}
             style={styles.input}
@@ -66,13 +71,15 @@ const Index = () => {
       {errors.email && (
         <Text style={styles.error}>{errors.email.message}</Text>
       )}
+      <Text style={styles.label}>Password</Text>
 
       <Controller
         name="password"
         control={control}
         render={({ field: { onChange, value } }) => (
           <TextInput
-            placeholder="Password"
+            placeholder="Should be at least 8 characters."
+            placeholderTextColor={'gray'}
             value={value}
             onChangeText={onChange}
             style={styles.input}
@@ -86,12 +93,15 @@ const Index = () => {
       {errors.password && (
         <Text style={styles.error}>{errors.password.message}</Text>
       )}
+      <Text style={styles.label}>Confirm Password</Text>
+
       <Controller
         name="confirmPassword"
         control={control}
         render={({ field: { onChange, value } }) => (
           <TextInput
-            placeholder="Confirm Password"
+            placeholder="Confirm your password."
+            placeholderTextColor={'gray'}
             value={value}
             onChangeText={onChange}
             style={styles.input}
@@ -126,6 +136,7 @@ const styles = StyleSheet.create({
   input: {
     borderWidth: 1,
     borderColor: "#6b7280",
+    backgroundColor: "#f9fafb",
     borderRadius: 8,
     padding: 12,
     marginTop: 10,
@@ -144,5 +155,11 @@ const styles = StyleSheet.create({
   buttonText: {
     color: "white",
     fontWeight: "bold",
-  },
+  }, 
+    label: {
+    fontSize: 14,
+    fontWeight: "600",
+    marginBottom: 6,
+    marginTop: 16,
+  }
 });
